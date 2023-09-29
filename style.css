@@ -1,0 +1,880 @@
+:root {
+    --titles: #54504df3;
+    --custom-box-shadow: #00000038 0px 0px 19px;
+    --custom-box-shadow-inset: inset #00000022 0px 0px 15px;
+    --myName : #948b84db;
+}
+
+@keyframes scaleLoop {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+        transform: translateY(-10px) scale(1.1);
+        -webkit-transform: translateY(-10px) scale(1.1);
+        -moz-transform: translateY(-10px) scale(1.1);
+        -ms-transform: translateY(-10px) scale(1.1);
+        -o-transform: translateY(-10px) scale(1.1);
+}
+}
+
+@keyframes rollImage {
+    0% {
+        transform: translateX(-150%) rotate(-360deg); /* Commence en dehors de l'écran à gauche et tourne sur elle-même */
+    }
+    10% {
+        transform: translateX(0) rotate(0deg); /* Arrive au centre en 1s (10% de 10s) sans rotation additionnelle */
+    }
+    90% {
+        transform: translateX(0) rotate(0deg); /* Reste au centre pendant 8s (de 10% à 90% de 10s) sans rotation additionnelle */
+    }
+    100% {
+        transform: translateX(200%) rotate(360deg);
+        -webkit-transform: translateX(200%) rotate(360deg);
+        -moz-transform: translateX(200%) rotate(360deg);
+        -ms-transform: translateX(200%) rotate(360deg);
+        -o-transform: translateX(200%) rotate(360deg);
+}
+}
+
+
+@keyframes bounceCaption {
+    0% {
+        transform: translateY(100%); /* Commence en dehors de l'écran en bas */
+    }
+    30% {
+        transform: translateY(-10%); /* Fait un petit "saut" vers le haut */
+    }
+    100% {
+        transform: translateY(0); /* Se pose doucement à sa position finale */
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: black;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+#burger-menu {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    z-index: 2010; /* assurez-vous qu'il est toujours au-dessus de tout */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.burger-icon {
+    position: absolute;
+    /* top: 1vh; */
+    right: 0px;
+    transition: opacity 0.6s ease;
+    width: 25px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+#icon-close {
+    opacity: 0;
+}
+
+header {
+    position: fixed;
+    top: -100%;
+    width: 100%;
+    height: 100vh;
+    padding: 0 45px 0 45px;
+    background-color: #ffffff65;
+    z-index: 1000;
+    transition: top 0.8s ease;
+    -webkit-transition: top 0.8s ease;
+    -moz-transition: top 0.8s ease;
+    -ms-transition: top 0.8s ease;
+    -o-transition: top 0.8s ease;
+    border-radius: 0 0 25px 5%;
+    -webkit-border-radius: 0 0 25px 5%;
+    -moz-border-radius: 0 0 25px 5%;
+    -ms-border-radius: 0 0 25px 5%;
+    -o-border-radius: 0 0 25px 5%;
+}
+
+header::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(6px); /* applique un flou */
+    pointer-events: none; /* pour ne pas interférer avec les clics */
+    z-index: -1; /* pour le placer derrière le contenu du header */
+    opacity: 0; /* caché par défaut */
+    transition: opacity 0.3s ease;
+}
+
+header.open::before {
+    opacity: 1; /* affiché lorsque le menu est ouvert */
+}
+
+header.open {
+    top: 0; /* visible lorsqu'il est ouvert */
+    height: 100vh;
+}
+
+#navbar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+#navbar ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 20%;
+    height: 100vh;
+    padding-top: 20vh;
+    padding-bottom: 20vh;
+}
+
+
+.linkMenu{
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: var(--titles);
+    text-decoration: none;
+}
+
+#navbar ul li a.linkMenu:hover{
+    text-decoration: underline;
+}
+
+#navbar ul li img{
+    margin-right: 45px;
+    width: 25px;
+}
+
+
+/* MAIN */
+
+/* En tete */
+
+#enTete{
+    height: 100vh;
+}
+
+#enTete figure{
+    padding-top: 18vh;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 50vh;
+}
+
+#enTete figure img{
+    box-shadow: var(--custom-box-shadow);
+    max-width: 300px;
+}
+
+#enTete figure figcaption {
+    animation: bounceCaption 2s forwards; /* Animation qui dure 2s et s'arrête à la fin du cycle */
+    height: 34vh;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+}
+
+
+#enTete figure figcaption p{
+    color: var(--myName);
+    font-size: 1.4rem;
+    text-align: center;
+    /* font-weight: bold; */
+    padding: 10px;
+}
+
+#me{
+    line-height: 8vh;
+}
+
+#me1{
+    overflow-x: visible;
+    white-space: nowrap;
+    font-size: 1.2rem;
+}
+
+#me2{
+    font-size: 1.1rem;
+}
+
+#me3{
+    font-weight: bold;
+    line-height: 9vh;
+}
+
+#enTete figure figcaption a{
+    color: var(--titles);
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 20px;
+    box-shadow: var(--custom-box-shadow);
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    margin: 3vh auto;
+    margin-top: 10vh;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    animation: scaleLoop 2s infinite;
+    -webkit-animation: scaleLoop 2s infinite;
+}
+
+#enTete figure figcaption a:hover{
+    background-color: var(--myName);
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    color: white;
+}
+
+
+#profilPic{
+    width: 50%;
+    border-radius: 100%;
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    margin-bottom: -3vh;
+    animation: rollImage 10s infinite; /* Animation infinie qui dure 10s à chaque cycle */
+}
+
+/* SECTION 2 ABOUT ME */
+
+#aboutMe{
+    min-height: 100vh;
+    padding-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+#aboutMePresentation{
+    width: 70%;
+    margin: auto;
+    margin-top: 5vh;
+    margin-bottom: 10vh;
+    box-shadow: var(--custom-box-shadow);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#aboutMePresentation h2{
+    color: var(--titles);
+    margin: 2vh 0 5vh 0;
+    text-align: center;
+    box-shadow: var(--custom-box-shadow-inset);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#aboutMePresentation p{
+    text-align: justify;
+    width: 100%;
+}
+
+/* lang */
+
+#lang{
+    width: 70%;
+    margin: auto;
+    margin-bottom: 7.5vh;
+    box-shadow: var(--custom-box-shadow);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+#lang h3{
+    color: var(--titles);
+    text-align: center;
+    margin-bottom: 3vh;
+    box-shadow: var(--custom-box-shadow-inset);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.ficheLang{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 2vh;
+    margin-left: 20px;
+}
+
+.imgLang{
+    width: 32px;
+    height: 32px;
+    margin-right: 20px;
+}
+
+.textLang{
+    display: flex;
+    flex-direction: column;
+}
+
+/* skills */
+
+#skills {
+    width: 70%;
+    margin: auto;
+    box-shadow: var(--custom-box-shadow);
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#skillsH3{
+    margin-bottom: 3vh;
+}
+
+#skills h3 {
+    color: var(--titles);
+    text-align: center;
+}
+
+#skillsH3 p{
+    color: var(--myName);
+    text-align: center;
+}
+
+#skillsLogo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: start; /* écarte les images également */
+}
+
+.skillItem {
+    display: inline-block;
+    position: relative;
+    margin: 10px;
+    transition: all 0.3s;
+}
+
+.skillsLogo {
+    width: 30px;
+    max-width: 100%;
+    transition: transform 0.3s ease; /* Transition pour le déplacement vers le haut */
+    filter: none; /* Par défaut, pas de flou */
+}
+
+.skillName {
+    display: none;
+    position: absolute;
+    bottom: -20px;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    overflow-x: visible;
+    white-space: nowrap;
+    font-weight: bold;
+    z-index: 1000;
+}
+
+.skillItem:hover .skillsLogo {
+    transform: translateY(-10px); /* Déplace l'image vers le haut */
+    filter: none; /* L'image survolée n'est pas floutée */
+}
+
+.skillItem:hover .skillName {
+    display: block; /* Affiche le nom de la compétence au survol */
+}
+
+
+/* SECTION 3 EXPERIENCES */
+
+
+#Exp {
+    padding-top: 5vh;
+    min-height: 100vh;
+}
+    
+
+#ExpDiv{
+    padding: 20px;
+    box-shadow: var(--custom-box-shadow);
+    min-height: 100vh;
+    width: 70%;
+    margin: 5vh auto;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+#Exp h2{
+    color: var(--titles);
+    text-align: center;
+    margin-bottom: 3vh;
+    background-color: var(--myName);
+    color: white;
+    padding: 2vh 0;
+    box-shadow: var(--custom-box-shadow-inset);
+}
+
+#Exp article{
+    max-width: 767px;
+    padding: 20px;
+    box-shadow: var(--custom-box-shadow-inset);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    margin: 3vh auto;
+    min-height: 40vh;
+    position: relative; /* Ajout de cette ligne pour contrôler l'emplacement de .imgXP et .textCartXP */
+    overflow: hidden;  /* Assure que rien ne déborde de l'article */
+}
+
+.imgXP{
+    width: 80%;
+    max-width: 300px;
+    margin: auto;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    position: absolute; /* Absolu pour le positionnement à l'intérieur de l'article */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Assure que l'image est au-dessus du texte */
+    transition: opacity 0.4s; /* Ajout d'une transition pour un effet fondu */
+}
+
+.textCartXP {
+    position: absolute; /* Absolu pour le positionnement à l'intérieur de l'article */
+    top: 0;
+    left: 5%;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Caché au début */
+    transition: opacity 0.4s; /* Ajout d'une transition pour un effet fondu */
+    z-index: 1; /* Assure que le texte est sous l'image */
+    pointer-events: none; /* Assure que le texte n'interfère pas avec les événements de la souris */
+    
+}
+
+#Exp article:hover .imgXP {
+    opacity: 0; /* Lorsque l'article est survolé, l'image devient transparente */
+}
+
+#Exp article:hover .textCartXP {
+    opacity: 1; /* Lorsque l'article est survolé, le texte devient visible */
+}
+
+.titreXP{
+    margin: 1vh auto;
+    text-align: center;
+    color: var(--myName);
+}
+
+.dateXP{
+    font-size: 0.7rem;
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+.descriptionXP{
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+/* SECTION 4 FORMATION */
+
+#formation{
+    min-height: 100vh;
+    padding-top: 5vh;
+}
+  
+
+#Fdiv{
+    padding: 20px;
+    box-shadow: var(--custom-box-shadow);
+    min-height: 100vh;
+    width: 70%;
+    margin: 5vh auto;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+#formation h2{
+    color: var(--titles);
+    text-align: center;
+    margin-bottom: 3vh;
+    background-color: var(--myName);
+    color: white;
+    padding: 2vh 0;
+    box-shadow: var(--custom-box-shadow-inset);
+}
+
+#Fdiv article{
+    padding: 20px;
+    box-shadow: var(--custom-box-shadow-inset);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    margin: 3vh auto;
+    min-height: 40vh;
+    position: relative; /* Ajout de cette ligne pour contrôler l'emplacement de .imgXP et .textCartXP */
+    overflow: hidden;  /* Assure que rien ne déborde de l'article */
+}
+
+.imgF{
+    width: 80%;
+    max-width: 300px;
+    margin: auto;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    position: absolute; /* Absolu pour le positionnement à l'intérieur de l'article */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Assure que l'image est au-dessus du texte */
+    transition: opacity 0.4s; /* Ajout d'une transition pour un effet fondu */
+}
+
+.textCartF {
+    position: absolute; /* Absolu pour le positionnement à l'intérieur de l'article */
+    top: 0;
+    left: 5%;
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0; /* Caché au début */
+    transition: opacity 0.4s; /* Ajout d'une transition pour un effet fondu */
+    z-index: 1; /* Assure que le texte est sous l'image */
+    pointer-events: none; /* Assure que le texte n'interfère pas avec les événements de la souris */
+    
+}
+
+#formation article:hover .imgF {
+    opacity: 0; /* Lorsque l'article est survolé, l'image devient transparente */
+}
+
+#formation article:hover .textCartF {
+    opacity: 1; /* Lorsque l'article est survolé, le texte devient visible */
+}
+
+.titreF{
+    margin: 1vh auto;
+    text-align: center;
+    color: var(--myName);
+}
+
+.dateF{
+    font-size: 0.7rem;
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+.descriptionF{
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+#FBold{
+    font-weight: bold;
+}
+
+/* SECTION 5 PROJETS */
+
+#projets{
+    min-height: 100vh;
+    width: 100%;
+    margin: 5vh auto;
+}
+
+#separationProjet h2{
+    width: 100%;
+    margin: 5vh auto;
+    padding: 2vh 0;
+    text-align: center;
+    color: var(--titles);
+    background-color: var(--myName);
+    box-shadow: var(--custom-box-shadow-inset);
+    color: white;
+}
+
+#introProjet{
+    width: 90%;
+    margin: auto;
+    margin-bottom: 3vh;
+    text-align: justify;
+}
+
+.imgProjet{
+    width: 50%;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.637) 0 0 15px;
+    max-width: 400px;
+    margin: 30px auto;
+}
+
+.divProjet a{
+    text-align: center;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+
+.divProjet a:hover{
+    transform: scale(1.05);
+    -webkit-transform: scale(1.05);
+    -moz-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    -o-transform: scale(1.05);
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+
+.divProjet h2, .divProjet p{
+    box-shadow: var(--custom-box-shadow);
+    padding: 10px 15px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.divProjet h2{
+    color: var(--myName);
+}
+
+.divProjet p{
+    text-align: justify;
+    color: var(--titles);
+}
+
+.carousel-container {
+    width: 90%;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--custom-box-shadow-inset);
+    padding: 15px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    min-height: 50vh ;
+    margin: auto;
+}
+
+.carousel-slide {
+    display: flex;
+    transition: all 0.5s;
+    width: 100%;
+    margin: 3vh auto;
+}
+
+.divProjet {
+    width: 100%;
+    flex-shrink: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+}
+
+#btns{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    margin-top: 2vh;
+}
+
+#prevBtn,
+#nextBtn {
+    transition: 0.4s;
+    z-index: 2;
+    background-color: white;
+    color: var(--titles);
+    border: none;
+    box-shadow: var(--custom-box-shadow-inset);
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    margin: 3vh auto;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+}
+
+#prevBtn:hover,
+#nextBtn:hover{
+    background-color: var(--myName);
+    color: white;
+    box-shadow: #00000055 0px 10px 20px;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -ms-transition: 0.4s;
+    -o-transition: 0.4s;
+    transform: translateY(-7px);
+    -webkit-transform: translateY(-7px);
+    -moz-transform: translateY(-7px);
+    -ms-transform: translateY(-7px);
+    -o-transform: translateY(-7px);
+} 
+
+.progress-bar {
+    height: 10px;
+    background: var(--myName);
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 5s linear; /* Temps de transition calé sur la durée du changement de slide */
+}
+
+/* FOOTER - CONTACT */
+
+#contact{
+    width: 100%;
+    background-color: var(--myName);
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1vh;
+}
+
+#contact > *{
+    margin: 1vh auto;
+}
+
+#contact p, #socialLinks a{
+    color: white;
+}
+
+.imgSocial{
+    width: 32px;
+}
+
+.gifSocial{
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.textContact{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    padding-top: 2vh;
+}
+
+#socialLinks{
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+/* Container pour la barre de progression */
+.progress-containerBottom {
+    z-index: 2000;
+    width: 100%;
+    height: 1vh;
+    position: fixed;
+    bottom: 0;
+    background-color: transparent; /* Couleur de fond du conteneur */
+}
+
+/* Barre de progression */
+.progress-barBottom {
+    z-index: 2000;
+    height: 1vh;
+    width: 0%;
+    background-color: var(--titles);
+    border-radius: 0 10px 10px 0;
+    -webkit-border-radius: 0 10px 10px 0;
+    -moz-border-radius: 0 10px 10px 0;
+    -ms-border-radius: 0 10px 10px 0;
+    -o-border-radius: 0 10px 10px 0;
+}

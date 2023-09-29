@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <title>DigitalResume</title>
+</head>
+
+<body>
+    <button id="burger-menu">
+        <img class="burger-icon" id="icon-open" src="assets/menu-burger.png" alt="Menu" />
+        <img class="burger-icon" id="icon-close" src="assets/cross.png" alt="Close" />
+    </button>
+
+    <header>
+        <nav id="navbar">
+            <ul>
+                <li>
+                    <a href="index.html" class="linkMenu"><img src="assets/home.png" alt="home" />Home</a>
+                </li>
+                <li>
+                    <a href="#aboutMe" class="linkMenu"><img src="assets/user.png" alt="aboutMe" />About me</a>
+                </li>
+                <li>
+                    <a href="#Exp" class="linkMenu"><img src="assets/briefcase.png" alt="Experience" />Experiences</a>
+                </li>
+                <li>
+                    <a href="#formation" class="linkMenu"><img src="assets/graduation-cap.png" alt="Education" />Formation</a>
+                </li>
+                <li>
+                    <a href="#projets" class="linkMenu"><img src="assets/eye.png" alt="Projects" />Projets</a>
+                </li>
+                <li>
+                    <a href="#contact" class="linkMenu"><img src="assets/envelope.png" alt="Contact" />Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="enTete">
+            <figure>
+                <img src="assets/IMG_1699.jpeg" alt="profilpic" id="profilPic" />
+                <figcaption>
+                    <p><span id="me">Salut!</span> <br>
+                    <span id="me1">Je suis Matthieu Brunet-Debaines</span> <br>
+                    <span id="me2">Etudiant du programme Pre-MSC à</span> <br>
+                    <span id="me3">EPITECH</span></p>
+                    <a href="assets/CV EPTECH V1.pdf" target="_blank">Téléchargez mon CV</a>
+                </figcaption>
+            </figure>
+        </section>
+
+        <!-- !!!!!!!!!!!!!!!!!!!! ABOUT ME !!!!!!!!!!!!!!!!!!!!!!! -->
+
+        <section id="aboutMe">
+            <article id="aboutMePresentation">
+                <h2>A propos</h2>
+                <p>
+                    Étudiant à EPITECH en programme MSC, je cherche une alternance comme
+                    assistant chef de projet en informatique. Passionné par le web et
+                    l'IA, je suis déterminé à contribuer à des projets innovants et
+                    impactants.
+                </p>
+            </article>
+
+            <article id="lang">
+                <h3>Langues</h3>
+                <ul>
+                    <li class="ficheLang">
+                        <img src="assets/lang/flag.png" alt="Anglais" class="imgLang">
+                        <div class="textLang">
+                            <h4>Anglais</h4>
+                            <p>B2 - TOEIC: 889</p>
+                        </div>
+                    </li>
+                    <li class="ficheLang">
+                        <img src="assets/lang/spain.png" alt="Espagnol" class="imgLang">
+                        <div class="textLang">
+                            <h4>Espagnol</h4>
+                            <p>Intermédiaire</p>
+                        </div>
+                    </li>
+                    <li class="ficheLang">
+                        <img src="assets/lang/france.png" alt="Français" class="imgLang">
+                        <div class="textLang">
+                            <h4>Français</h4>
+                            <p>Langue maternelle</p>
+                        </div>
+                    </li>
+                </ul>
+            </article>
+
+            <article id="skills">
+                <div id="skillsH3">
+                    <h3>Skills</h3>
+                    <p>Survolez pour en savoir plus</p>
+                </div>
+                <div id="skillsLogo">
+                    <div class="skillItem">
+                        <img src="assets/skills/agile.png" alt="Agile logo" class="skillsLogo">
+                        <span class="skillName">Agile <br>Experimenté</span>
+                    </div>
+                    <div class="skillItem">
+                        <img src="assets/skills/css-3.png" alt="CSS3 logo" class="skillsLogo">
+                        <span class="skillName">CSS3 <br>Confirmé</span>
+                    </div>
+                    <div class="skillItem">
+                        <img src="assets/skills/html-5.png" alt="HTML5 logo" class="skillsLogo">
+                        <span class="skillName">HTML5 <br>Confirmé
+                        </span>
+                    </div>
+                    <div class="skillItem">
+                        <img src="assets/skills/java.png" alt="Java logo" class="skillsLogo">
+                        <span class="skillName">Java <br>Débutant</span>
+                    </div>
+                    <div class="skillItem">
+                        <img src="assets/skills/js.png" alt="JavaScript logo" class="skillsLogo">
+                        <span class="skillName">JavaScript <br>Intermédiraire</span>
+                    </div>
+                    <div class="skillItem">
+                        <img src="assets/skills/php.png" alt="PHP logo" class="skillsLogo">
+                        <span class="skillName">PHP <br>Confirmé (OOP)</span>
+                    </div>
+                    <div class="skillItem">
+                        <img src="assets/skills/python.png" alt="Python logo" class="skillsLogo">
+                        <span class="skillName">Python <br>Intermédiaire</span>
+                    </div>
+                    <div class="skillItem">
+                        <img src="assets/skills/react.png" alt="React logo" class="skillsLogo">
+                        <span class="skillName">React <br>Intermédiaire</span>
+                    </div>
+                    <div class="skillItem">
+                        <img src="assets/skills/sql-server.png" alt="SQL Server logo" class="skillsLogo">
+                        <span class="skillName">SQL Server <br>Confirmé</span>
+                    </div>
+                </div>
+            </article>
+            
+        </section>
+
+
+        <!-- !!!!!!!!!!!!!!!!!!!! EXPERIENCE !!!!!!!!!!!!!!!!!!!!!!! -->
+
+        <section id="Exp">
+            <h2>Expérience professionnelle</h2>
+            <div id="ExpDiv">
+
+                <article>
+                    <img src="assets/xp/png-clipart-web-development-web-design-software-development-web-developer-web-design-web-design-text-removebg-preview.png" alt="" class="imgXP"/>
+                    <div class="textCartXP">
+                        <h3 class="titreXP">
+                            FREELANCE | Assistant developpeur web front-end
+                        </h3>
+                        <p class="dateXP">Mai -Juillet 2023</p>
+                        <p class="descriptionXP">
+                            Lors de ces trois mois de stage, ma mission était d'épauler mon
+                            tuteur de stage dans la réalisation de projets clients sur la
+                            partie front-end, plus particulierement en utilisant HTML, CSS,
+                            Javascript et React.
+                        </p>
+                    </div>
+                </article>
+
+                <article>
+                    <img src="assets/xp/Logo_of_the_French_Army_(Armee_de_Terre).svg.png" alt="" class="imgXP"/>
+                    <div class="textCartXP">
+                        <h3 class="titreXP">
+                            ARMEE DE TERRE | Adjoint au bureau des Ressources Humaines - Chef
+                            d'équipe
+                        </h3>
+                        <p class="dateXP">2017 - 2022</p>
+                        <p class="descriptionXP">
+                            Manager une équipe de quatre personnes <br />
+                            Monter les dossiers administratifs, financiers et RH des
+                            personnels d’une entitéde 150 personnes. <br />
+                            Planifier, préparer et anticiper les échéances pour les personnels
+                        </p>
+                    </div>
+                </article>
+
+                <article>
+                    <img src="assets/xp/Logo_ETIC-Groupe.jpg" alt="" class="imgXP"/>
+                    <div class="textCartXP">
+                        <h3 class="titreXP">
+                            ETIC GROUP | Agent d’accueil lors d’évènements sportifs et
+                            culturels
+                        </h3>
+                        <p class="dateXP">2016 - 2017</p>
+                        <p class="descriptionXP">Accueillir puis orienter le client</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- !!!!!!!!!!!!!!!!!!!! FORMATION !!!!!!!!!!!!!!!!!!!!!!! -->
+
+        <section id="formation">
+            <h2>Formation</h2>
+            <div id="Fdiv">
+
+                <article>
+                    <img src="assets/Formation/EPITECH_DIGITAL_SCHOOL_LOGO_QUADRI.png" alt="" class="imgF" />
+                    <div class="textCartF">
+                        <h3 class="titreF">EPITECH - Marseille</h3>
+                        <p class="dateF">Sep 2023 - en cours</p>
+                        <p class="descriptionF">
+                            Master 2 - Expert en management des systèmes d'information
+                        </p>
+                    </div>
+                </article>
+
+                <article>
+                    <img src="assets/Formation/Logo-AFPA-removebg-preview.png" alt="" class="imgF"/>
+                    <div class="textCartF">
+                        <h3 class="titreF">AFPA - Marseille</h3>
+                        <p class="dateF">Dec 2022 - Juillet 2023</p>
+                        <p class="descriptionF">
+                            Titre professionnel de développeur web et web mobile <br />
+                            <span id="FBold">HTML, CSS, JS, PHP, React, Symfony</span>
+                        </p>
+                    </div>
+                </article>
+
+                <article>
+                    <img src="assets/Formation/kedge.png" alt="" class="imgF" />
+                    <div class="textCartF">
+                        <h3 class="titreF">KEDGE - Marseille</h3>
+                        <p class="dateF">2012 - 2017</p>
+                        <p class="descriptionF">License en management</p>
+                        <ul>
+                            <li>2016 Uniandes Universidad - Colombie</li>
+                            <li>2015 - 2016 Vilnius University - Lithuanie</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- !!!!!!!!!!!!!!!!!!!! PROJETS !!!!!!!!!!!!!!!!!!!!!!! -->
+
+
+
+        <section id="projets">
+
+            <div id="separationProjet">
+                <h2>Projets</h2>
+            </div>
+        
+            <p id="introProjet">Voici une série de quatre projets que j'ai réalisé dans le cadre de ma formation de développeur web. N'hésitez pas à cliquer dessus afin de les visiter.</p>
+        
+            <div class="carousel-container">
+                <div class="carousel-slide">
+                    <!-- Projet 1 -->
+                    <div class="divProjet" id="eternal">
+                        <h2>Eternal Descent</h2>
+                        <a href="https://jonathan-auber.github.io/eternal-descent/" target="_blank">
+                            <img src="assets/eternal.png" alt="eternal descent le jeu" class="imgProjet">
+                        </a>
+                        <p>Projet web de groupe. Nous avons créé un site vitrine de jeu vidéo fictif annoncé mais non sorti</p>
+                        <div class="progress-bar"></div>
+                    </div>
+                    
+                    <!-- Projet 2 -->
+                    <div class="divProjet">
+                        <h2>Galaxy</h2>
+                        <a href="">
+                            <img src="assets/galaxy.png" alt="projet galaxy" class="imgProjet">
+                        </a>
+                        <p>Projet web qui vous servira de guide lors de votre conquête spatiale</p>
+                        <div class="progress-bar"></div>
+                    </div>
+        
+                    <!-- Projet 3 -->
+                    <div class="divProjet">
+                        <h2>CineCanap</h2>
+                        <a href="" target="_blank">
+                            <img src="assets/cinecanap.png" alt="cinecanap" class="imgProjet">
+                        </a>
+                        <p>Projet web d'intégration d'API'. Vous pouvez rechercher un film</p>
+                        <div class="progress-bar"></div>
+                    </div>
+        
+                    <!-- Projet 4 -->
+                    <div class="divProjet">
+                        <h2>TodoList</h2>
+                        <a href="" target="_blank">
+                            <img src="assets/TodoList.png" alt="todolist" class="imgProjet">
+                        </a>
+                        <p>Ce projet PHP vous permet d'ajouter, modifier et supprimer des tâches à une liste. Bienvenue au CRUD.</p>
+                        <div class="progress-bar"></div>
+                    </div>
+        
+                </div>
+                
+            </div>
+            <div id="btns">
+                <button id="prevBtn">Précédent</button>
+                <button id="nextBtn">Suivant</button>
+            </div>        
+        </section>
+        
+        <aside class="progress-containerBottom">
+            <div class="progress-barBottom"></div>
+        <aside>        
+
+    </main>
+
+    <footer id="contact">
+
+        <div class="textContact">
+            <p>Aix-Marseille | Permis B motorisé</p>
+            <p>Tel: 06.32.27.60.12</p>
+        </div>
+        <!-- <iframe src="https://maps.app.goo.gl/561PL3NuJ3thzPfd9" width="70%" height="400" frameborder="0" allowfullscreen></iframe> -->
+        <div id="socialLinks">
+            <a href="https://github.com/matthieubrunetdebaines" target="_blank"><img src="assets/social/github (1).png" alt="gitHub" class="imgSocial"></a>
+            <a href="mailto:exemple@domaine.com"><img src="assets/social/mail.gif" alt="mail" class="imgSocial gifSocial"></a>
+            <a href="https://www.linkedin.com/in/matthieu-brunet-debaines-7a6035219" target="_blank"><img src="assets/social/linkedin (1).png" alt="LK" class="imgSocial"></a>
+        </div>
+
+        
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
