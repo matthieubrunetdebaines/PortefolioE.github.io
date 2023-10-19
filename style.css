@@ -281,7 +281,7 @@ header.open {
     -ms-border-radius: 100%;
     -o-border-radius: 100%;
     margin-bottom: -3vh;
-    animation: rollImage 10s infinite; /* Animation infinie qui dure 10s à chaque cycle */
+    /* animation: rollImage 10s infinite; Animation infinie qui dure 10s à chaque cycle */
 }
 
 /* SECTION 2 ABOUT ME */
